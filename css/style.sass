@@ -1,0 +1,470 @@
+/*шрифты*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap')
+
+/*reset styles*/
+
+*
+  margin: 0
+  padding: 0
+
+body
+  background: linear-gradient(to right, #43095e, #72094b)
+  font-family: 'Roboto', sans-serif
+  font-size: 14px
+  color: #553267
+  font-weight: bold
+  text-transform: uppercase
+
+
+.container
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100vh
+
+/*Блок таблицы*/
+
+.cup-table
+  display: flex
+  overflow: auto
+  width: 90%
+  height: 80%
+  padding: 20px
+  border-radius: 10px
+  background-color: #fff
+  box-shadow: 10px 10px 40px rgba(0,0,0,.8)
+
+/*Тур турнира*/
+
+.stage
+  margin-left: 20px
+  padding-bottom: 30px
+
+  &__heading
+    display: flex
+    justify-content: center
+    width: 246px
+    font-size: 16px
+    font-weight: 900
+
+/*Блок игры*/
+
+.game
+  display: flex
+  flex-direction: column
+  position: relative
+  width: 246px
+  margin-top: 10px
+
+  &__item
+    display: flex
+    align-items: center
+    height: 33px
+    margin-top: 2px
+    border-radius: 5px
+    cursor: pointer
+
+    &__score
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 16%
+      height: 100%
+      border-radius: 5px 0 0 5px
+      background-color: #c5b5cf
+
+    &__team
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      width: 84%
+      height: 100%
+      padding-left: 10px
+      border-radius: 0 5px 5px 0
+      background-color: #d3c6da
+
+/*Секция перехода между этапами*/
+
+.transition
+  display: flex
+  flex-direction: column
+  position: relative
+  padding-top: 30px
+
+  &__block
+    height: 150px
+    margin-top: 8px
+
+/*Секция четверть финал*/
+
+.quarter-final-game
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  width: 246px
+  height: 150px
+  margin-top: 10px
+  margin-left: 6px
+  padding-left: 14px
+
+/*Секция полуфинал*/
+
+.semi-final-game
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  width: 246px
+  height: 300px
+  margin-top: 10px
+  margin-left: 6px
+  padding-left: 14px
+
+/*Секция финал*/
+
+.final-game
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  width: 246px
+  height: 630px
+  margin-top: 10px
+  margin-left: 6px
+  padding-left: 14px
+
+.img-cup
+  position: absolute
+  top: 130px
+  left: 80px
+  animation: wobble-hor-bottom 0.8s both 18s
+
+/*Стили блоков с нумерациями игр*/
+
+.game-number
+  position: absolute
+  left: -26px
+  top: 26px
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 8s both
+
+.game-number-quarter-final
+  position: absolute
+  left: -16px
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 12.8s both
+
+.game-number-semi-final
+  position: absolute
+  left: -16px
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 15.5s both
+
+.game-final
+  position: absolute
+  left: -16px
+  animation: scale-in-hor-left 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 17.2s both
+
+/*Вспомогательные классы позиционирования*/
+.mt-10
+  margin-top: 10px
+
+.mt-20
+  margin-top: 20px
+
+.mb-40
+  margin-bottom: 40px
+
+/*Анимации*/
+
+// анимация появления команд в 1/16 финала
+
+.stage-first-round > div:nth-child(2) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.5s both
+
+.stage-first-round > div:nth-child(2) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1s both
+
+.stage-first-round > div:nth-child(3) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 1.5s both
+
+.stage-first-round > div:nth-child(3) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 2s both
+
+.stage-first-round > div:nth-child(4) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 2.5s both
+
+.stage-first-round > div:nth-child(4) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 3s both
+
+.stage-first-round > div:nth-child(5) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 3.5s both
+
+.stage-first-round > div:nth-child(5) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 4s both
+
+.stage-first-round > div:nth-child(6) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 4.5s both
+
+.stage-first-round > div:nth-child(6) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 5s both
+
+.stage-first-round > div:nth-child(7) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 5.5s both
+
+.stage-first-round > div:nth-child(7) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 6s both
+
+.stage-first-round > div:nth-child(8) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 6.5s both
+
+.stage-first-round > div:nth-child(8) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 7s both
+
+.stage-first-round > div:nth-child(9) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 7.5s both
+
+.stage-first-round > div:nth-child(9) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 8s both
+
+// анимация перехода в 1/8 финала
+
+.first-round-transition > div > svg > line:nth-child(2n+1)
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 8.2s both
+
+.first-round-transition > div > svg > line:nth-child(2)
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 8.3s both
+
+.first-round-transition > div > svg > line:nth-child(4)
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 8.5s both
+
+// анимация появления команд в 1/8 финала
+
+.stage-second-round > div:nth-child(2) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 9s both
+
+.stage-second-round > div:nth-child(2) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 9.5s both
+
+.stage-second-round > div:nth-child(3) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 10s both
+
+.stage-second-round > div:nth-child(3) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 10.5s both
+
+.stage-second-round > div:nth-child(4) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 11s both
+
+.stage-second-round > div:nth-child(4) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 11.5s both
+
+.stage-second-round > div:nth-child(5) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 12s both
+
+.stage-second-round > div:nth-child(5) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 12.5s both
+
+// анимация перехода в 1/4 финала
+
+.second-round-transition > div > svg > line:nth-child(2n+1)
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 12.9s both
+
+.second-round-transition > div > svg > line:nth-child(2)
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 13.1s both
+
+.second-round-transition > div > svg > line:nth-child(4)
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 13.3s both
+
+// анимация появления команд в 1/4 финала
+
+.stage-third-round > div:nth-child(2) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 13.5s both
+
+.stage-third-round > div:nth-child(2) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 14s both
+
+.stage-third-round > div:nth-child(3) > .game__item:nth-child(2)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 14.5s both
+
+.stage-third-round > div:nth-child(3) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 15s both
+
+// анимация перехода в финал
+
+.third-round-transition > div > svg > line:nth-child(2n+1)
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 15.7s both
+
+.third-round-transition > div > svg > line:nth-child(2)
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 16s both
+
+.third-round-transition > div > svg > line:nth-child(4)
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 16.2s both
+
+// анимация появления команд в финале
+
+.final-round > div:nth-child(2) > .game__item:nth-child(3)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 16.7s both
+
+.final-round > div:nth-child(2) > .game__item:nth-child(4)
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) 17.2s both
+
+@-webkit-keyframes scale-in-hor-left
+  0%
+    transform: scaleX(0)
+    transform-origin: 0% 0%
+    opacity: 1
+
+  100%
+    transform: scaleX(1)
+    transform-origin: 0% 0%
+    opacity: 1
+
+
+@keyframes scale-in-hor-left
+  0%
+    transform: scaleX(0)
+    transform-origin: 0% 0%
+    opacity: 1
+
+  100%
+    transform: scaleX(1)
+    transform-origin: 0% 0%
+    opacity: 1
+
+
+@-webkit-keyframes swing-in-top-fwd
+  0%
+    -webkit-transform: rotateX(-100deg)
+    transform: rotateX(-100deg)
+    -webkit-transform-origin: top
+    transform-origin: top
+    opacity: 0
+
+  100%
+    -webkit-transform: rotateX(0deg)
+    transform: rotateX(0deg)
+    -webkit-transform-origin: top
+    transform-origin: top
+    opacity: 1
+
+@keyframes swing-in-top-fwd
+  0%
+    -webkit-transform: rotateX(-100deg)
+    transform: rotateX(-100deg)
+    -webkit-transform-origin: top
+    transform-origin: top
+    opacity: 0
+
+  100%
+    -webkit-transform: rotateX(0deg)
+    transform: rotateX(0deg)
+    -webkit-transform-origin: top
+    transform-origin: top
+    opacity: 1
+
+@-webkit-keyframes slide-in-left
+  0%
+    -webkit-transform: translateX(-1000px)
+    transform: translateX(-1000px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes slide-in-left
+  0%
+    -webkit-transform: translateX(-1000px)
+    transform: translateX(-1000px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+    opacity: 1
+
+@-webkit-keyframes slide-in-right
+  0%
+    -webkit-transform: translateX(1000px)
+    transform: translateX(1000px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes slide-in-right
+  0%
+    -webkit-transform: translateX(1000px)
+    transform: translateX(1000px)
+    opacity: 0
+
+  100%
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
+    opacity: 1
+
+
+@-webkit-keyframes wobble-hor-bottom
+  0%
+    opacity: 0
+
+  15%
+    opacity: 1
+    -webkit-transform: translateX(-30px) rotate(-6deg)
+    transform: translateX(-30px) rotate(-6deg)
+
+  30%
+    -webkit-transform: translateX(15px) rotate(6deg)
+    transform: translateX(15px) rotate(6deg)
+
+  45%
+    -webkit-transform: translateX(-15px) rotate(-3.6deg)
+    transform: translateX(-15px) rotate(-3.6deg)
+
+  60%
+    -webkit-transform: translateX(9px) rotate(2.4deg)
+    transform: translateX(9px) rotate(2.4deg)
+
+  75%
+    -webkit-transform: translateX(-6px) rotate(-1.2deg)
+    transform: translateX(-6px) rotate(-1.2deg)
+
+  100%
+    -webkit-transform: translateX(0%)
+    transform: translateX(0%)
+    -webkit-transform-origin: 50% 50%
+    transform-origin: 50% 50%
+
+@keyframes wobble-hor-bottom
+  0%
+    opacity: 0
+
+  15%
+    opacity: 1
+    -webkit-transform: translateX(-30px) rotate(-6deg)
+    transform: translateX(-30px) rotate(-6deg)
+
+  30%
+    -webkit-transform: translateX(15px) rotate(6deg)
+    transform: translateX(15px) rotate(6deg)
+
+  45%
+    -webkit-transform: translateX(-15px) rotate(-3.6deg)
+    transform: translateX(-15px) rotate(-3.6deg)
+
+  60%
+    -webkit-transform: translateX(9px) rotate(2.4deg)
+    transform: translateX(9px) rotate(2.4deg)
+
+  75%
+    -webkit-transform: translateX(-6px) rotate(-1.2deg)
+    transform: translateX(-6px) rotate(-1.2deg)
+
+  100%
+    -webkit-transform: translateX(0%)
+    transform: translateX(0%)
+    -webkit-transform-origin: 50% 50%
+    transform-origin: 50% 50%
